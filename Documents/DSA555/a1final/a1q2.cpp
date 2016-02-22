@@ -1,21 +1,3 @@
-/*#include <iostream>
-using namespace std;
-
-void printArray(const int arr[], int sz) {
-	cout << "(size " << sz << ") " << "{ ";
-	for (int i=0; i<sz; i++) {
-		if (i < sz-1) {
-			cout << arr[i] << "," << arr[i+1] << " "; 
-			i++;
-		}
-		else {
-			cout << arr[i] << " ";
-		} 
-	}
-	cout << "}\n";
-}
-*/
-
 // Searches for a possible candidate for a majority element
 // Parameters: integer array containing items to look through, a reference to an int which will be used to return the candidate (if any), and the size of the array
 // Returns true if a possible candidate is found and false otherwise
