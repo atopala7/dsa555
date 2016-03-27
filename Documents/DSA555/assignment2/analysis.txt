@@ -1,0 +1,47 @@
+Part A
+
+Search is linear.
+Grow is linear.
+
+Find is linear due to to a call to search; same if found or not found.
+
+Update calls search, so at least linear.
+	If it doesn't exist and the array is too small to hold a new element, the method calls grow, which is again linear; then it sorts, which is O(n^2); so it's O(n^2).
+	If there's no need to grow, it's still O(n^2) because of the sort.
+	If the item exists, it's O(n) because of the search.
+
+Remove calls search, so at least linear.
+	If the item is not there, it just returns false, so it's O(n).
+	If the item is there, it deletes the record and shifts every other record to the left, which is a linear operation, so in total it's still O(n).
+
+The assignment operator, if the original table is null, creates a new array and calls the Update function for each element in the other array; this is O(n^2).
+	If the original table isn't null, it goes through every record and calls Remove on it, which is also O(n^2).
+
+The destructor calls remove on each record, so it's O(n^2).
+
+The copy constructor seems to call Update for every element in the other array, which is O(n^2^2)
+
+
+Part 2:
+
+Search is O(logn) because it is a binary search.
+Grow is linear.
+
+Find is O(logn)  due to to a call to search; same if found or not found.
+
+Update calls search, so at least O(logn).
+	If it doesn't exist and the array is too small to hold a new element, the method calls grow, which is linear; so it's O(n).
+	If there's no need to grow, it moves through the array until it encounters the spot in which the new element should be placed; then it puts the new element there, and continues on until the end, shifting each element over to the right; all of this is O(n).
+	If the item exists, it's O(logn) because of the search.
+
+Remove calls search, so at least O(logn).
+	If the item is not there, it just returns false, so it's O(logn).
+	If the item is there, it deletes the record and shifts every other record to the left, which is a linear operation, so in total it's O(n).
+
+The assignment operator, if the original table is null, creates a new array and goes through it, filling each element with a new record with the corresponding values taken from the other array; this is O(n).
+	If the original table isn't null, it goes through every record and deletes it, which is O(n).
+
+The destructor goes through the array and deletes each record, so it's O(n).
+
+The copy constructor creates a new array with a capacity equal to other's, and the goes through the array and fills each space with a new record created from the data in the corresponding other record; this is O(n).
+
