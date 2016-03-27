@@ -1,0 +1,1 @@
+The worst case run time of the brute force algorithm for finding GCD (that is, the iterative function in a1q3.cpp) is O(n), where n is the smaller of the two numbers. This occurs when the numbers have no common divisors and the function must check every number from n to 1.

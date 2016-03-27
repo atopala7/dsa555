@@ -1,10 +1,7 @@
 #include <string>
 #include <utility>
 #include <functional>
-#include <iostream> // for testing
 using namespace std;
-int news = 0;
-int deletes = 0;
 
 template <class TYPE>
 class Table{
